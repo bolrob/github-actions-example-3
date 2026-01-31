@@ -15,9 +15,14 @@ concurrency:
 
 jobs:
   greet:
-    uses: ./.github/actions/my-action.yml
-    with:
-      name: "Цирк Уродов"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: greet
+        uses: ./.github/actions/my-action.yml
+        with:
+          name: "Цирк Уродов"
 
   build:
     runs-on: ubuntu-latest
