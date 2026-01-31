@@ -14,6 +14,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  greet:
+    uses: ./.github/actions/my-action.yml
+    with:
+      name: "Цирк Уродов"
+
   build:
     runs-on: ubuntu-latest
     steps:

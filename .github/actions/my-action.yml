@@ -1,0 +1,17 @@
+name: My Action
+description: Greets user
+author: Gulbabek
+
+inputs:
+  name:
+    description: 'Каго приветствовать'
+    default: 'User'
+    requred: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: "Greet"
+      shell: bash
+      run: |
+        echo "Hello, ${{ inputs.name }}!"
